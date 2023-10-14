@@ -24,3 +24,4 @@ conn = psycopg2.connect(
     # password=DB_PASSWORD,
     # port=DB_PORT
 )
+
