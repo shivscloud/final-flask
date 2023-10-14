@@ -9,7 +9,11 @@ COPY requirements.txt .
 
 # Install the Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
+ENV DB_HOST your_database_host
+ENV DB_NAME your_database_name
+ENV DB_USER your_database_user
+ENV DB_PASSWORD your_database_password
+ENV DB_PORT your_database_port
 # Copy the application code to the working directory
 COPY . .
 

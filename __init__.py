@@ -1,14 +1,18 @@
 import psycopg2
 import os
-# Database connection configuration
-# Database connection configuration
-# DB_HOST = 'dpg-cih699tgkuvojj9dkc1g-a.singapore-postgres.render.com'
-# DB_NAME = 'techrs'
-# DB_USER = 'raj'
-# DB_PASSWORD = 'YTDz4j8qlITR9etxzzWeNZ6nV4Lr02ER'
-# DB_PORT = '5432'
 
-url = 'postgres://raj:YTDz4j8qlITR9etxzzWeNZ6nV4Lr02ER@dpg-cih699tgkuvojj9dkc1g-a.singapore-postgres.render.com/techrs'
+# Fetch environment variables for database connection
+DB_HOST = os.environ.get('DB_HOST')
+DB_NAME = os.environ.get('DB_NAME')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+# DB_PORT = os.environ.get('DB_PORT')
+
+# url = 'postgres://raj:YTDz4j8qlITR9etxzzWeNZ6nV4Lr02ER@dpg-cih699tgkuvojj9dkc1g-a.singapore-postgres.render.com/techrs'
+# postgres://raj:QcC9ayYK2SaZ9KtqYeU0PzsUc7ng2ie1@dpg-ckl2l42v7m0s73dccbbg-a.oregon-postgres.render.com/pgdb_29nf
+
+# Construct the database URL
+url = f"postgres://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 
 # url = os.environ.get('DATABASE_URL')
 # Connect to the PostgreSQL database
